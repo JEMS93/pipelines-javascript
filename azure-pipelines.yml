@@ -45,6 +45,9 @@ steps:
     tsc --target ES6 --strict true --project tsconfigs/production.json
     jasmine test --reporter jasmine-reporters
     webpack
+    npm install -g @angular/cli
+    npm install
+    ng build --prod
   displayName: 'npm install and build'
    
     
