@@ -35,9 +35,7 @@ steps:
   inputs:
     artifactName: dist
     pathtoPublish: 'dist'
-    
 
-    
 - script: |
     npm install --only=dev
     npm run build
