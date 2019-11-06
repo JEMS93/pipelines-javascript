@@ -28,5 +28,5 @@ steps:
 - script: |
     npm install --only=dev
     npm run build
-    npx-mocha
+    npm install mocha --save-dev
   displayName: 'npm install and build'
