@@ -31,6 +31,11 @@ steps:
     testRunner: JUnit
     testResultsFiles: '**/TEST-RESULTS.xml'
 
+- task: PublishBuildArtifacts@1
+  inputs:
+    artifactName: dist
+    pathtoPublish: 'dist'
+    
 - task: PublishCodeCoverageResults@1
   inputs: 
     codeCoverageTool: Cobertura
