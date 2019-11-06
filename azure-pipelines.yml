@@ -29,4 +29,6 @@ steps:
     npm install --only=dev
     npm run build
     npm install mocha --save-dev
+    yarn install
+    npm run compile
   displayName: 'npm install and build'
