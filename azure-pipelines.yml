@@ -38,11 +38,13 @@ steps:
     reportDirectory: '$(System.DefaultWorkingDirectory)/**/coverage'
     
 - script: |
-    #npm install --only=dev
+    
     npm run build
+    
+    webpack
+  displayName: 'npm install and build'
+    #npm install --only=dev
     #npm install mocha --save-dev
     #yarn install
     #tsc --target ES6 --strict true --project tsconfigs/production.json
     #jasmine test --reporter jasmine-reporters
-    webpack
-  displayName: 'npm install and build'
