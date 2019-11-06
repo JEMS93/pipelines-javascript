@@ -31,10 +31,6 @@ steps:
     testRunner: JUnit
     testResultsFiles: '**/TEST-RESULTS.xml'
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    artifactName: dist
-    pathtoPublish: 'dist'
 
 - script: |
     npm install --only=dev
