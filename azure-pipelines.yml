@@ -36,11 +36,7 @@ steps:
     artifactName: dist
     pathtoPublish: 'dist'
     
-- task: PublishCodeCoverageResults@1
-  inputs: 
-    codeCoverageTool: Cobertura
-    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/*coverage.xml'
-    reportDirectory: '$(System.DefaultWorkingDirectory)/**/coverage'
+
     
 - script: |
     npm install --only=dev
@@ -49,10 +45,9 @@ steps:
     yarn install
     tsc --target ES6 --strict true --project tsconfigs/production.json
     jasmine test --reporter jasmine-reporters
-    webpack
-    npm install -g @angular/cli
-    npm install
-    ng build --prod
+    npm install webpack webpack-cli --save-dev
+    npx webpack --config webpack.config.js
+    
   displayName: 'npm install and build'
    
     
