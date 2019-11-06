@@ -31,6 +31,10 @@ steps:
     testRunner: JUnit
     testResultsFiles: '**/TEST-RESULTS.xml'
 
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+    includeRootFolder: false
 
 - script: |
     npm install --only=dev
@@ -41,6 +45,7 @@ steps:
     jasmine test --reporter jasmine-reporters
     npm install webpack webpack-cli --save-dev
     npx webpack --config webpack.config.js
+   
     
   displayName: 'npm install and build'
    
