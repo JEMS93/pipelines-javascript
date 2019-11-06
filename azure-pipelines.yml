@@ -31,4 +31,5 @@ steps:
     npm install mocha --save-dev
     yarn install
     tsc --target ES6 --strict true --project tsconfigs/production.json
+    mocha test --reporter mocha-junit-reporter
   displayName: 'npm install and build'
